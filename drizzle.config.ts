@@ -8,5 +8,5 @@ export default {
     dbCredentials: {
         url: env.DATABASE_URL,
     },
-    tablesFilter: ["muelsyse_*"],
+    tablesFilter: ["nexttemplate_*"],
 } satisfies Config;
