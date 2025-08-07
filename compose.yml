@@ -1,0 +1,28 @@
+name: next-template-dev
+services:
+  next-template-dev-db:
+    image: postgres:latest
+    container_name: next-template-dev-db
+    ports:
+      - "5432:5432"
+    deploy:
+      resources:
+          limits:
+              cpus: "1"
+              memory: 1G
+    env_file:
+      - ./.env
+    environment:
+      POSTGRES_USER: elizielx
+      POSTGRES_PASSWORD: elizielx
+      POSTGRES_DB: next-template
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+        - next-template-dev-network
+volumes:
+  postgres_data:
+    name: postgres_data
+networks:
+  next-template-dev-network:
+    driver: bridge
