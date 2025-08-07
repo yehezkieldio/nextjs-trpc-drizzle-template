@@ -2,7 +2,7 @@ import { createId } from "@paralleldrive/cuid2";
 import { sql } from "drizzle-orm";
 import { pgTableCreator, timestamp, uuid, varchar } from "drizzle-orm/pg-core";
 
-export const createTable = pgTableCreator((name) => `muelsyse_${name}`);
+export const createTable = pgTableCreator((name) => `nexttemplate_${name}`);
 
 export const publicId = varchar({ length: 128 })
     .notNull()
